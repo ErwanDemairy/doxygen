@@ -33,6 +33,7 @@
       <xsd:element name="briefdescription" type="descriptionType" minOccurs="0" />
       <xsd:element name="detaileddescription" type="descriptionType" minOccurs="0" />
       <xsd:element name="inheritancegraph" type="graphType" minOccurs="0" />
+      <xsd:element name="inheritancegraphref" type="xsd:string" minOccurs="0" />
       <xsd:element name="collaborationgraph" type="graphType" minOccurs="0" />
       <xsd:element name="programlisting" type="listingType" minOccurs="0" />
       <xsd:element name="location" type="locationType" minOccurs="0" />

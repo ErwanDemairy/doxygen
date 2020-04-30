@@ -1400,6 +1400,14 @@ static void generateXMLForClass(const ClassDef *cd,FTextStream &ti)
     t << "    <inheritancegraph>" << endl;
     inheritanceGraph.writeXML(t);
     t << "    </inheritancegraph>" << endl;
+
+    t << "    <inheritancegraphref>" << endl;
+    const char * m_dir = Config_getString(XML_OUTPUT);
+    QCString s = inheritanceGraph.writeGraph(t, GraphOutputFormat::GOF_BITMAP, EmbeddedOutputFormat::EOF_Html, m_dir, "temp.svg", ".");
+    t << "<url>";
+    t << s << ".svg";
+    t << "</url>";
+    t << "    </inheritancegraphref>" << endl;
   }
   DotClassGraph collaborationGraph(cd,Collaboration);
   if (!collaborationGraph.isTrivial())
